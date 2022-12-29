@@ -1,11 +1,20 @@
 # Events-to-hook-for-text-changed-events-in-a-WinForms-ComboBox
-The TextChanged event is triggered when the [ComboBox](https://help.syncfusion.com/windowsforms/sfcombobox/gettingstarted?utm_medium=listing&utm_source=github-examples) SelectedItem and Textchanges. Please click the following [How do I listen to text changed events in a WinForms ComboBox]( https://www.syncfusion.com/kb/9578?utm_medium=listing&utm_source=github-examples) for more details.
+
+WinForms SfComboBox.TextBox.TextChanged event can be hooked to listen the textbox’s text changes. Also you can use [SelectedIndexChanged](https://help.syncfusion.com/cr/windowsforms/Syncfusion.WinForms.ListView.SfComboBox.html#Syncfusion_WinForms_ListView_SfComboBox_SelectedIndexChanged), [SelectedValueChanged](https://help.syncfusion.com/cr/windowsforms/Syncfusion.WinForms.ListView.SfComboBox.html#Syncfusion_WinForms_ListView_SfComboBox_SelectedValueChanged events of [SfComboBox](https://help.syncfusion.com/cr/windowsforms/Syncfusion.WinForms.ListView.SfComboBox.html) to listen the selection changes.
+
 
 # C#
 
-     private void SfComboBox1_TextChanged(object sender, EventArgs e)
-        {
-            //Text changed
-            var selectedText = ((TextBox) sender).Text;
-        }
+sfComboBox1.TextBox.TextChanged += SfComboBox1_TextChanged;
+sfComboBox1.SelectedIndexChanged += SfComboBox1_SelectedIndexChanged;
+  
+private void SfComboBox1_TextChanged(object sender, EventArgs e)
+{
+     //Text changed
+     var selectedText = ((TextBox) sender).Text;
+}
+  
+private void SfComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+{
+}
         
